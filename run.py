@@ -19,7 +19,7 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-    g = git.cmd.Git('.')
+    g = git.cmd.Git('/home/beehive/gitScripts')
     g.pull()
     return "done"
 
