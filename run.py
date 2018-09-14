@@ -21,6 +21,7 @@ def get_input_data():
 def get_files(file_name):    
     g = git.cmd.Git('.')
     g.pull()
+    return "done"
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
     file_name = get_input_data()
     print(file_name)
     try:
-        get_files(file_name)
+        print(get_files(file_name))
     except Exception as e:
         print (str(e))
 
