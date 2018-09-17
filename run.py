@@ -33,10 +33,7 @@ def main():
 #### add input parameter
     file_name = get_input_data()
     print(file_name)
-    try:
-        print(get_files(file_name))
-    except Exception as e:
-        print (str(e))
+    get_files(file_name)
 
 if __name__ == '__main__':
     main()
