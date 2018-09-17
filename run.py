@@ -26,7 +26,7 @@ def get_files(file_name):
 		remove = 'act -U db_superuser -w db_superuser -c "\remove ' + file_name + '"'
   		os.system(remove)
 		install = 'act -U db_superuser -w db_superuser -c "\install ' + file_name + '"' 
-        	os.system(install)
+        os.system(install)
    		print("done")
 	else:
    		print("This was not working... ")    
