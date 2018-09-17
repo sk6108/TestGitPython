@@ -2,7 +2,9 @@
 
 import re
 import sys
-import git 
+#import git 
+import os
+
 
 
 def get_input_data():   
@@ -19,9 +21,12 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-    g = git.cmd.Git('/home/beehive/gitScripts')
-    g.pull()
-    return "done"
+p = os.system("cd /home/beehive/gitScripts/ | git pull")
+try:
+   p
+   print("done"
+except NameError:
+   print("This was not working... ")    
 
 
 def main():
