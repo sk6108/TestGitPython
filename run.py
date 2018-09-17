@@ -21,12 +21,12 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-p = os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
-try:
-   p
-   print("done"
-except NameError:
-   print("This was not working... ")    
+	p = os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
+	try:
+   		p
+   		print("done")
+	except NameError:
+   		print("This was not working... ")    
 
 
 def main():
