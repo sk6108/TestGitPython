@@ -27,12 +27,14 @@ def get_files(file_name):
    		print("done")
 	except NameError:
    		print("This was not working... ")    
+   		os.system('act -U db_superuser -w db_superuser -c "\remove' + file_name + '"')
+   		os.system('act -U db_superuser -w db_superuser -c "\install' + file_name + '"')
 
 
 def main():
 #### add input parameter
     file_name = get_input_data()
-    print(file_name)
+
     get_files(file_name)
 
 if __name__ == '__main__':
