@@ -21,15 +21,15 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-	p = os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
-	try:
-   		p
+	os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
+	if os.path.exists(file_name):
+		remove = 'act -U db_superuser -w db_superuser -c "\remove ' + file_name + '"'
+  		os.system(remove)
+		install = 'act -U db_superuser -w db_superuser -c "\install ' + file_name + '"' 
+        	os.system(install)
    		print("done")
-	except NameError:
+	else:
    		print("This was not working... ")    
-   		os.system('act -U db_superuser -w db_superuser -c "\remove' + file_name + '"')
-   		os.system('act -U db_superuser -w db_superuser -c "\install' + file_name + '"')
-
 
 def main():
 #### add input parameter
