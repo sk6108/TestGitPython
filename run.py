@@ -21,7 +21,7 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-p = os.system("cd /home/beehive/gitScripts/ | git pull")
+p = os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
 try:
    p
    print("done"
