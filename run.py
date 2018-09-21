@@ -21,30 +21,18 @@ def get_input_data():
         return input_par[0]
 
 def get_files(file_name):    
-	p = os.system("cd /home/beehive/gitScripts/ | /opt/anaconda/bin/git pull")
-	try:
-   		p
-   		print("done")
-	except NameError:
-   		print("This was not working... ")    
-   		os.system('act -U db_superuser -w db_superuser -c "\\remove' + file_name + '"')
-   		os.system('act -U db_superuser -w db_superuser -c "\install' + file_name + '"')
+	path = "/home/beehive/gitScripts/"
+	os.system("cd /home/beehive/gitScripts/ && /opt/anaconda/bin/git pull")
+	os.system('act -U db_superuser -w db_superuser -c "\\remove' + file_name + '"')
+   	os.system('act -U db_superuser -w db_superuser -c "\install' + path + file_name + '"')
 
 
 def main():
 #### add input parameter
     file_name = get_input_data()
-<<<<<<< Local Changes
-
-    sys.
-    try:
-        print(get_files(file_name))
-    except Exception as e:
-        print (str(e))
-=======
-
     get_files(file_name)
->>>>>>> External Changes
+    print("done")
+
 
 if __name__ == '__main__':
     main()
